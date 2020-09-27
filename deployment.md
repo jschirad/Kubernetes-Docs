@@ -60,3 +60,63 @@
 	Deployment modo declarativo.
 
 	Ver /Deployments.
+
+	> kubectl create -f [fichero.yaml]
+
+	> kubectl apply -f [fichero.yaml]
+
+	> kubectl edit deploy [deploy-name]
+
+	> kubectl get deployment
+
+	> kubectl get pod
+
+### Clase 5
+
+	Escalar un deployment.
+
+	> kubectl scale deploy [name-deploy] --replicas=[numero]
+
+	Si dentro de el fichero yaml. Configuramos una label, como por ejemplo > estado = "1" y seguido de eso ejecutamos
+
+	> kubectl scale deploy -l estado=1 --replicas=10
+
+	Lo que estamos indicando es que los deployments que contengan la etiqueta (estado = "1") escalen a 10.
+
+### Clase 6
+
+	Memoria de un deployment.
+
+	Vamos a configurar la memeria que podra tener un pod.
+
+	Lo que hacemos es agregar la etiquete < resources > en el apartado de contenedores dentro del archivo yaml.
+
+	Aqui configurarmos la memoria con la que inicia el pod (request : memory :) y la memoria limite que puede alcanzar el pod (limits: memory:)
+
+### Clase 7
+
+	CPU de un deployment.
+
+	> kubectl describe node
+
+	Con este comando podemos ver las caracteristicas del nodo con el que estamos trabajando.
+
+	Ademas podemos ver la capacidad que podemos reclamar al nodo.
+
+	Dentro de la etiqueta resources, utilizada anteriormente, podemos agregar la etiqueta (> cpu:) para aplicar cambios.
+
+### Clase 8
+
+	Metrics-Server. Api para medir rendimiento del cluster.
+
+	https://github.com/kubernetes-sigs/metrics-server.git
+
+	> kubectl apply -f /kubernetes
+
+	Si no se activa solo :
+
+	> minikube addons enable metrics-server
+
+	> kubectl top node / pods
+
+	Simula el comando top pero enfocado en el nodo del cluster.

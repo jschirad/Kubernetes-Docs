@@ -17,3 +17,8 @@ spec:
         image: nginx:1.7.9
         ports:
         - containerPort: 80
+        resources:
+          limits:
+            memory: 200Mi # Limite de memoria que puede alcanzar
+          requests:
+            memory: 100M  # Memoria con la que inicia el pod
