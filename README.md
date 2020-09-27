@@ -3,30 +3,30 @@
 ![image](Kubernetes_Logo.png)
 
 
-### [Introducción](intro.md)
+### [Introducción](/Documents/intro.md)
 
-### [Minikube](minikube.md)
+### [Minikube](/Documents/minikube.md)
 
-### [Pods](pods.md)
+### [Pods](/Documents/pods.md)
 
-### [Labels](label.md)
+### [Labels](/Documents/label.md)
 
 ### [Deployments](/Documents/deployment.md)
 
-### [Servicios](servicios.md)
+### [Servicios](/Documents/servicios.md)
 
 ### [Practica]
 
-### [Namespaces](namespace.md)
+### [Namespaces](/Documents/namespace.md)
 
-### [Almacenamiento](storage.md)
+### [Almacenamiento](/Documents/storage.md)
 
-### [Almacenamiento Dinamico](storageD.md)
+### [Almacenamiento Dinamico](/Documents/storageD.md)
 
-### [Variables, ConfigMaps, Secrets](random.md)
+### [Variables, ConfigMaps, Secrets](/Documents/random.md)
 
-### [RBAC- Seguridad](security.md)
+### [RBAC- Seguridad](/Documents/security.md)
 
-### [Ingress Controler](ingress.md)
+### [Ingress Controler](/Documents/ingress.md)
 
-### [Amazon Elastic Kubernetes](amazon.md)
+### [Amazon Elastic Kubernetes](/Documents/amazon.md)
