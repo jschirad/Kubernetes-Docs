@@ -1,6 +1,6 @@
 # Kubernetes-Docs
 
-![image](Kubernetes_Logo.png)
+![image](/Documents/Kubernetes_Logo.png)
 
 
 ### [Introducción](/Documents/intro.md)
