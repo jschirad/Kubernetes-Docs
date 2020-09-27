@@ -97,3 +97,67 @@
 
 ### Clase 5
 
+	Rolling Updates. Va modificando los pods de manera evolutiva. De esta manera no corto el servicio. Van cambiando de a uno.
+
+	Recreate. Destruye todo y vuelve a crear los pods nuevos de cero. Por lo que habra una caida de servicio.
+
+	Recursos Deployments/deploy_nginx2.yaml
+
+	> kubectl create -f deploy_nginx2.yaml
+
+	El comando va desplegar los pods en el cluster.
+
+	Ahora lo que queremos hacer es una modificacion en el deployment para poder apreciar el cambio de pods.
+
+	Un cambio considerable puede ser cambiar la imagen del contenedor. O inclusive la version de la imagen.
+
+	> kubectl apply -f deploy_nginx2.yaml
+
+	> kubectl get pods
+
+	Podemos ver como de a poco iran terminando algunos, seguiran corriendo otros y estaran iniciando los nuevos pods con la nueva imagen.
+
+	Esto evita la perdida de servicio.
+
+### Clase 6
+
+	En este caso vamos agregar una propiedad mas al rollingUpdate.
+
+	Recursos /Deployments/deploy_nginx3.yaml nginx3-svc.yaml
+
+	> maxUnavailable: Nunca mas de (n+1) El 1 puede variar
+
+	> maxSurge: Nunca menos de (n-1) El 1 puede variar
+
+	> minReadySeconds : Tiempo minimo para correr los cambios.
+
+	De igual manera podemos generar un cambio en el deployment y ver como reaccionan los pods al cambio.
+
+	Con el siguiente comando podemos ver un historial de rollout. Y con el flag --revision vemos en detalle lo que hay desplegado.
+
+	> kubectl rollout history deploy [name-deploy]
+
+	> kubectl rollout history deploy [name] --revision=[número]
+
+### Clase 7
+
+	Rollback.
+
+	En el caso de que hayamos hecho un rollingUpdate y no estemos de acuerdo con el cambio, intentaremos volver a una version anterior.
+
+	> kubectl rollout history deployment [name]
+
+	> kubectl rollout undo deployment [name] --to-revision=[Número]
+
+	Con rollout undo lo que hacemos es volver a una version anterior.
+
+### Clase 8
+
+	Recreate. Como dijimos anteriormente, es otro tipo de estrategia para actualizar mi deployment.
+
+	Con la diferencia que si aplicamos algun cambio al deployment, este cortara el servicio por completo y lo levantara de nuevo desde cero.
+
+	No es una buena estrategia si queremos mantener nuestro servicio disponible. Puede aplicarse en un problema particular, a forma de reinicio de sistemas.
+
+	strategy:
+		type: Recreate
