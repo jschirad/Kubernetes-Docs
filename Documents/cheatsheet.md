@@ -1,6 +1,13 @@
 # Ejemplo de desplegar Pod/servicio/ingress/LoadBalancer
 
+https://kubernetes.github.io/ingress-nginx/deploy/#using-helm
+https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-ingress-guide-nginx-example.html
+https://kubernetes.github.io/ingress-nginx/examples/auth/basic/
 
+https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengsettingupingresscontroller.htm
+https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/nginx-configuration/annotations.md
+
+https://webcache.googleusercontent.com/search?q=cache:Qz02raDzhn8J:https://www.opsmx.com/blog/implementation-of-basic-authentication-for-prometheus-and-alertmanager/+&cd=1&hl=es&ct=clnk&gl=es
 ## Desplegar el servicio de ingress-nginx / LoadBalancer
 
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
