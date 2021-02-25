@@ -10,8 +10,9 @@ helm install ingress-nginx ingress-nginx/ingress-nginx
 
 ## Desplegamos pods / servicios
 
-/**
 ------------------------------------------------------------------------------------
+
+>
 kind: Pod
 apiVersion: v1
 metadata:
@@ -36,8 +37,8 @@ spec:
     app: apple
   ports:
     - port: 5678 # Default port for image
+>
 
-*/
 
 -------------------------------------------------------------------------------
 
